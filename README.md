@@ -1,2 +1,2 @@
 # ds6559
-Computation III
+Computing III
