@@ -1,0 +1,29 @@
+# get lightweight anaconda w latest python
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# change permissions to give write access
+chmod +x Miniconda3-latest-Linux-x86_64.sh
+
+# install anaconda
+./Miniconda3-latest-Linux-x86_64.sh
+
+# update source files
+source ~/.bashrc
+
+# update conda and install pip
+conda update conda
+pip install --upgrade pip
+
+# create virtual environment
+conda create -n spinningup python=3.6
+# activate the environment
+conda activate spinningup
+
+# get git
+sudo yum install git-all
+
+# install package for RL
+pip install gym
+
+# clone a repo
+git clone https://github.com/openai/spinningup.git
