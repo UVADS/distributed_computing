@@ -1,2 +1,2 @@
 # ds6559
-Distributed Computing
+Computation III: Distributed Computing
