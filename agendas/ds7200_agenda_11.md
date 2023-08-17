@@ -1,4 +1,4 @@
-## DS 5110 Big Data Systems: Agenda 11
+## DS 7200 Computing III Distributed Computing: Agenda 11
 
 ### Admin Items
 
