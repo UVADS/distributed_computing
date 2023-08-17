@@ -5,7 +5,6 @@
 ### Admin Items
 
 - Review Syllabus
-- HW solutions will be posted to Resources folder on Collab
 - Communications:
   - Teams for IM
   - Email TA for grading questions
