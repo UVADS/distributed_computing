@@ -2,8 +2,6 @@
 
 In this module, you will learn about one of the fundamental data types in Spark: the resilient distributed dataset (RDD).  
 Next, you will learn about how to run a Spark application on a cluster.
-
-Note: The programming assignment this week is one of the more challenging ones. Be sure to leave adequate time.
  
 ## LEARNING OUTCOMES
 
