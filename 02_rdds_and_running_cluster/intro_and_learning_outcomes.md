@@ -11,4 +11,5 @@ At the conclusion of this module, you should be able to:
 
 - Demonstrate how to use RDDs and Pair RDDs in data analysis tasks
 - Identify the conceptual framework of running Spark on a cluster
+- Define data system reliability, scalability, and maintainability 
 - Progress toward executing an end-to-end predictive modeling project using a large dataset
