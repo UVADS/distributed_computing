@@ -14,4 +14,6 @@ At the conclusion of this module, you should be able to:
 
 - Identify the benefits of columnar data formats like Parquet
 
+- Explain how Spark SQL uses the Catalyst Optimizer at a high level: concepts and stages
+
 - Execute an end-to-end predictive modeling project using a large dataset
