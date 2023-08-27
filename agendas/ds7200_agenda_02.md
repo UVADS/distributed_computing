@@ -1,31 +1,25 @@
 ## DS 7200 Computing III Distributed Computing: Agenda 02
 
 
-
 ### Admin Items
 
-Projects: Team membership can be found on Canvas Home page
+- TA office hours Friday
 
 ---
 
 ### Deliverables This Week
 
-- Quiz: Spark Fundamentals
-- Lab: Analytics on Social Data
-
----
-
-### RDDs and Pair RDDs
-
-- Review RDDs notebook
-  - Basics
-  - Types of transformations
-  - This part will help w HW: Example of text processing with map
-- Review Pair RDDs notebook
-  - transformations
-  - working w bigrams
-- Review the Lab Assignment
+- Quiz: Big Data Intro
+- Lab 1: Python Warmup and Logfile Analytics
 
 --- 
 
-### Team Project Breakout
+| Activity   |
+| :----------- |
+| Brief Review NB: Big Data Systems Foundations |
+| Brief Review NB: Spark Getting Started |
+| Brief Review NB: Review and work on Lab |
+| Review: Team Project Guidelines |
+| Team Project: Meet your teammates |
+
+---
