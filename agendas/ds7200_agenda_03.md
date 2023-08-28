@@ -1,10 +1,11 @@
-## DS 7200 Computing III Distributed Computing: Agenda 02
+## DS 7200 Computing III Distributed Computing: Agenda 03
 
 
 
 ### Admin Items
 
-Projects: Team membership can be found on Canvas Home page
+- For additional knowledge on Distributed Systems, I will review and share interesting findings from Distributed Systems 4th edition, van Steen and Tanenbaum. Book, slides, and code freely available [here](https://www.distributed-systems.net/index.php/books/ds4/)
+
 
 ---
 
@@ -28,4 +29,3 @@ Projects: Team membership can be found on Canvas Home page
 
 --- 
 
-### Team Project Breakout
