@@ -16,6 +16,8 @@
 
 ---
 
+### Distributed Systems Ch 1 Introduction - slide review
+
 ### RDDs and Pair RDDs
 
 - Review RDDs notebook
