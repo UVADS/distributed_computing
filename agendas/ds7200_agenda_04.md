@@ -18,6 +18,11 @@
 
 ### Distributed Systems Ch 1 Introduction on Scalability - slide review
 
+### Running Spark on a cluster
+
+- Discuss cores / nodes / driver / worker / executor
+- Job / Stage / Task
+
 ### RDDs and Pair RDDs
 
 - Review Pair RDDs notebook
