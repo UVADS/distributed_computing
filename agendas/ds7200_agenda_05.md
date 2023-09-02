@@ -1,8 +1,8 @@
-## DS 7200 Computing III Distributed Computing: Agenda 03
+## DS 7200 Computing III Distributed Computing: Agenda 05
 
 
 
-### Deliverables This Week
+### Deliverables for Module
 
 - Quiz: Spark DataFrames and Spark SQL
   be sure to review:  
@@ -32,6 +32,3 @@
 
 - Review Lab Assignment
 
---- 
-
-### Team Project Breakout
