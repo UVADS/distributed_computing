@@ -23,6 +23,7 @@
 
 ### Spark SQL and DataFrames
 
+- Review systems architecture examples
 - Review Spark SQL and DataFrames notebook 
   Dataframes
   - The structure makes use of distributed computing
