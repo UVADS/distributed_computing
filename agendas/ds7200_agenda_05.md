@@ -1,7 +1,9 @@
 ## DS 7200 Computing III Distributed Computing: Agenda 05
 
+### Administrative
 
-
+- Office Hours this week: Sep 6 @ 11am
+  
 ### Deliverables for Module
 
 - Quiz: Spark DataFrames and Spark SQL
