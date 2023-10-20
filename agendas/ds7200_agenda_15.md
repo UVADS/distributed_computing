@@ -1,4 +1,4 @@
-## DS 7200 Computing III Distributed Computing: Agenda 09
+## DS 7200 Computing III Distributed Computing: Agenda 15
 
 ### Deliverables This Week
 
@@ -8,9 +8,10 @@
 
 
 ### Content
+
+- Demo: AWS Services
  
 - Demo: Kafka overview - review notebook
 
 - Review slides: Consistent Hashing
 
-- Kickoff Lab: Streaming Messages with Apache Kafka
