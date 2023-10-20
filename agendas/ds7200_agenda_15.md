@@ -15,3 +15,5 @@
 
 - Review slides: Consistent Hashing
 
+- Ungraded Lab: Consistent Hashing
+
