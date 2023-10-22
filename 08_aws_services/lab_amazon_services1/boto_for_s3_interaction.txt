@@ -1,0 +1,15 @@
+# USE BOTO3 TO LIST ALL S3 BUCKETS FOR PROFILE
+
+import boto3
+
+# create a session with credentials
+session = boto3.session.Session('REPLACE_WITH_ACCESS_KEY_ID','REPLACE_WITH_SECRET_ACCESS_KEY')
+
+# create client to interact w S3
+s3_client = session.client('s3')
+
+# list the S3 buckets
+response = s3_client.list_buckets()
+
+# inspect the buckets
+response['Buckets']
