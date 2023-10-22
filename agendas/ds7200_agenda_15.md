@@ -9,11 +9,8 @@
 
 ### Content
 
-- Demo: AWS Services
+- Lab: Connecting AWS Services and Getting Started - S3/EC2/IAM
  
-- Demo: Kafka overview - review notebook
+- Kafka overview - review notebook (time permitting)
 
-- Review slides: Consistent Hashing
-
-- Ungraded Lab: Consistent Hashing
 
