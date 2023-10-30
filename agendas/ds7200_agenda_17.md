@@ -1,11 +1,11 @@
-## DS 7200 Computing III Distributed Computing: Agenda 10
+## DS 7200 Computing III Distributed Computing: Agenda 17
 
 ### Admin Items
 
 - Final Project Assignment  
   Should be:  
   - writing up results
-  - preparing presentation due Module 12
+  - preparing presentation
 
 ---
 
@@ -38,7 +38,4 @@
 
 --- 
 
-### Team Project Breakout (time permitting)
-
----
 
