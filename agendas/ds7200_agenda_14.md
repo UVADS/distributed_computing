@@ -1,11 +1,8 @@
-## DS 7200 Computing III Distributed Computing: Agenda 08
+## DS 7200 Computing III Distributed Computing: Agenda 14
 
 ### Admin Items
 
-This module does not have:  
-- a lab
-- jupyter notebooks
-
+This module does not have jupyter notebooks
 It contains more videos (some with yours truly)
 
 
@@ -26,6 +23,3 @@ It contains more videos (some with yours truly)
 
 - Continue training and evaluating models for this week; nothing to submit
 
---- 
-
-### Team Project Breakout (time permitting)

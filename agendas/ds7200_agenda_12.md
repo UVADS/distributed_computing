@@ -1,8 +1,8 @@
-## DS 7200 Computing III Distributed Computing: Agenda 06
+## DS 7200 Computing III Distributed Computing: Agenda 12
 
 ### Admin Items
 
-- No live session July 4; I will post recorded session by that meeting time
+- Posted user artist dataset
 
 ---
 
@@ -15,10 +15,6 @@
 
 - Lab: Recommender Systems Using Music Tracks from Autoscrobbler
 
-- Final Project Assignment (ungraded)
-training and evaluating models and have saved at least one model. 
-  -Notebook containing a concise summary of at least one model
-  (model type, best hyperparams, model size, performance metrics)
 
 ---
 
@@ -30,8 +26,3 @@ training and evaluating models and have saved at least one model.
 
 - Kickoff programming assignment: Recommender Systems
 
---- 
-
-### Team Project Breakout
-
-time permitting
