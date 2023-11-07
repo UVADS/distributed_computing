@@ -2,7 +2,10 @@
 
 ---
 
-[Graph Theory](https://en.wikipedia.org/wiki/Graph_theory)
+[Graph Theory](https://en.wikipedia.org/wiki/Graph_theory)  
+
+This reading provides background on graphs, as well as some interesting applications.  
+
 
 [The PageRank Citation Ranking](https://canvas.its.virginia.edu/courses/103086/files/2643284/download?wrap=1)
 
