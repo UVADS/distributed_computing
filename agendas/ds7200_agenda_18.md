@@ -1,12 +1,6 @@
-## DS 7200 Computing III Distributed Computing: Agenda 11
+## DS 7200 Computing III Distributed Computing: Agenda 18
 
 ### Admin Items
-
-- Final Project pacing:
-  - complete writing up your results
-  - finalizing presentation
-  - finalizing coding
-  - Presentations in final live session August 8
 
 - We will work with Databricks for this module
 
