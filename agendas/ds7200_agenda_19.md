@@ -17,6 +17,9 @@
   - Random Projection
   - Retrieval Augmented Generation (RAG) 
 
+- Semantic Search Lab
+  We use Pinecone for semantic search
+
 
 ---
 
