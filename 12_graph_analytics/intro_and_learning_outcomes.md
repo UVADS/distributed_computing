@@ -1,6 +1,6 @@
 ## INTRODUCTION
 
-In this final module, you will learn how to do graph analytics in Spark. The GraphX package in Spark provides functionality for RDDs, while the GraphFrames package can be used on PySpark DataFrames. You will read the original PageRank paper, which gave rise to Google! PageRank is an important algorithm that can be applied to graphs at massive scale.
+In this module, you will learn how to do graph analytics in Spark. The GraphX package in Spark provides functionality for RDDs, while the GraphFrames package can be used on PySpark DataFrames. You will read the original PageRank paper, which gave rise to Google! PageRank is an important algorithm that can be applied to graphs at massive scale.
 
 ## Learning Objectives
 
