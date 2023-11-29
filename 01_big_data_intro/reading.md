@@ -1,7 +1,9 @@
 ## Reading
 
-Learning Spark textbook:
+[MapReduce : Simplified Data Processing on Large Clusters](https://static.googleusercontent.com/media/research.google.com/en//archive/mapreduce-osdi04.pdf)  
+This is the original paper that introduced the MapReduce framework.
 
+Learning Spark textbook:
 - Chapter 1, Introduction to Apache Spark: A Unified Analytics Engine
 - Chapter 2, Downloading Apache Spark and Getting Started
 
