@@ -9,4 +9,5 @@ At the conclusion of this module, you should be able to:
 - Explain uses cases for vector embeddings
 - Explain the value of a vector store
 - Apply Pinecone for semantic search
+- Explain the Random Projection method and its benefits
 - Execute an end-to-end predictive modeling project using a large dataset
