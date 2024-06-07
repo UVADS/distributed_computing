@@ -12,3 +12,6 @@
 
 
 [Distributed Training: Guide for Data Scientists](https://neptune.ai/blog/distributed-training)
+
+
+[Distributed model training II: Parameter Server and AllReduce](http://www.juyang.co/distributed-model-training-ii-parameter-server-and-allreduce/)
