@@ -10,5 +10,4 @@
 
 [Distributed model training II: Parameter Server and AllReduce](http://www.juyang.co/distributed-model-training-ii-parameter-server-and-allreduce/)
 
-[Distributed Machine Learning and the Parameter Server]
-https://www.cs.cornell.edu/courses/cs4787/2019sp/notes/lecture22.pdf
+[Distributed Machine Learning and the Parameter Server](https://www.cs.cornell.edu/courses/cs4787/2019sp/notes/lecture22.pdf)
