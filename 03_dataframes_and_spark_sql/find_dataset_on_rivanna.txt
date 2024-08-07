@@ -1,2 +1,2 @@
 full path with filename:
-/project/ds5559/large_datasets/part-00000-a159c41a-bc58-4476-9b78-c437667f9c2b-c000.json.gz
+/standard/ds7200-apt4c/large_datasets/part-00000-a159c41a-bc58-4476-9b78-c437667f9c2b-c000.json.gz
