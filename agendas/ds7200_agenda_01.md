@@ -8,7 +8,7 @@
 - Communications:
   - Teams for IM
   - Email TA for grading questions
-- Provide your background in Teams 
+- Brief intro / background
 - Review repo page: `setup.md`
 
 ---
