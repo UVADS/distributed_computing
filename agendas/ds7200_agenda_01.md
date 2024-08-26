@@ -14,12 +14,24 @@
 
 ---
 
-### Deliverables This Week
+### Upcoming Deliverables
 
 Due by Friday, Sep 6 at 5pm ET
 - Quiz 1: Big Data Intro
 - Lab 1: Python Warmup and Logfile Analytics
 
+
+---
+
+### Activity
+
+As time permits:
+
+- Review [Rivanna Open OnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sessions)
+- Review file structure, notebooks
+- Brief Review NB: Big Data Systems Foundations  
+- Brief Review NB: Spark Getting Started  
+- Brief Review: Lab
 
 ---
 
@@ -50,13 +62,3 @@ You can use this space to organize files for your project:
 2. save relevant files
 3. remove the folder and contents when the course ends
 
-| Activity   |
-| :----------- |
-| Fork the course repo and clone to Rivanna |
-| Introduce JupyterLab, terminal |
-| Review file structure, notebooks |
-| Brief Review NB: Big Data Systems Foundations |
-| Brief Review NB: Spark Getting Started |
-| Brief Review NB: Programming Assignment |
-
----
