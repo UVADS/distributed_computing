@@ -16,7 +16,8 @@
 
 ### Deliverables This Week
 
-- Quiz: Big Data Intro
+Due by Friday, Sep 6 at 5pm ET
+- Module 1 Quiz: Big Data Intro
 - Lab 1: Python Warmup and Logfile Analytics
 
 
