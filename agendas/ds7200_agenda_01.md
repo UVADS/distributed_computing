@@ -23,6 +23,8 @@
 
 ### Rivanna JupyterLab request page
 
+Request PySpark server
+
 | Key       | Value |
 | ----------- | :-----------: |
 | Rivanna Partition | Dev, Standard or Instructional* |
