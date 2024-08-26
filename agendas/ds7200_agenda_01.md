@@ -41,7 +41,7 @@ Number of hours: when time is up, compute will end. JupyterLab notebooks save co
 
 Rivanna used for most compute
 
-Shared space: `/project/ds5559/` for project data  
+Shared space: `/standard/ds7200-apt4c` for project data  
 You'll need to: 
 1. create folder
 2. change permissions to allow teammate access with `chmod` command [details here](https://linuxhandbook.com/chmod-command/)
