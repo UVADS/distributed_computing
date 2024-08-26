@@ -10,7 +10,7 @@ Each entry should answer these questions:
 - What was challenging for you? How can you learn it better?
 - Which parts did you enjoy?
 
-Constructive feedback is also fine (e.g., Exercise X, Part Y wasn't clear) but negative criticism should be avoided.
+Constructive feedback is also welcome (e.g., Exercise X, Part Y wasn't clear).
 
 Each entry should:
 - Use full sentences to show good writing and clear thought process
