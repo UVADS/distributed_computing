@@ -4,11 +4,12 @@
 
 ### Admin Items
 
+- Brief intro / background
 - Review Syllabus
+- Review Canvas
 - Communications:
   - Teams for IM
   - Email TA for grading questions
-- Brief intro / background
 - Review repo page: `setup.md`
 
 ---
