@@ -2,41 +2,27 @@
 
 ### Admin Items
 
-- Final Project pacing:
-  - complete writing up your results
-  - finalizing presentation
-  - finalizing coding
-  - Presentations on 12/29
+- Posted user artist dataset
 
 ---
 
 ### Deliverables This Week
 
-1) **Quiz**  
+- Quiz: 
+  - requirements of a transformer
+  - benefits of pipelines
+  - recommender systems (high-level concepts)
 
-Be sure to understand:  
-- Basics of graphs from lecture notes including
-  - nodes, edges, triplet, directed graph, connected component
-- Functions used in GraphX
+- Lab: Recommender Systems Using Music Tracks from Autoscrobbler
 
-2) **Programming assignment: computing on graphs**
-
-3) Journaling: modules 9-12
-
-
-### Content 
-
-- Brief discussion of Graphs (review lecture notes)
-
-- Intro to Deep Graph Library (DGL)  
-  project: https://www.dgl.ai/  
-  quick intro: https://docs.dgl.ai/tutorials/blitz/index.html
-
-- Kick off Programming Assignment
-
---- 
-
-### Team Project Breakout (time permitting)
 
 ---
+
+- Review Jupyter Notebook: ML Feature Utilities
+
+- Review Jupyter Notebook: ML Pipelines
+
+- Review Jupyter Notebook: Recommender Systems
+
+- Kickoff programming assignment: Recommender Systems
 
