@@ -27,14 +27,13 @@ Request PySpark server
 
 | Key       | Value |
 | ----------- | :-----------: |
-| Rivanna Partition | Dev, Standard or Instructional* |
+| Rivanna Partition | Interactive, Standard |
 | Work Directory | HOME |
-| Allocation| ds5559 |
+| Allocation| ds7200-apt4c |
 | Show Additional Options| No |
 
 Notes:    
-* Instructional partition is less crowded as it's dedicated for this class  
-Dev partition is free for  < 1 hour  
+Interactive partition is free for  < 1 hour  
 Start with small number of cores and increase as needed  
 Number of hours: when time is up, compute will end. JupyterLab notebooks save contents regularly. Request what you need.
 
@@ -44,10 +43,10 @@ Number of hours: when time is up, compute will end. JupyterLab notebooks save co
 Rivanna used for most compute
 
 Shared space: `/standard/ds7200-apt4c` for project data  
-You'll need to: 
+You can use this space to organize files for your project: 
 1. create folder
-2. change permissions to allow teammate access with `chmod` command [details here](https://linuxhandbook.com/chmod-command/)
-3. remove the folder when the course ends
+2. save relevant files
+3. remove the folder and contents when the course ends
 
 | Activity   |
 | :----------- |
