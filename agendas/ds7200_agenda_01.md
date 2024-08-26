@@ -27,7 +27,7 @@ Due by Friday, Sep 6 at 5pm ET
 
 As time permits:
 
-- Review [Rivanna Open OnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sessions)
+- Review [Rivanna OpenOnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sessions)
 - Review file structure, notebooks
 - Brief Review NB: Big Data Systems Foundations  
 - Brief Review NB: Spark Getting Started  
