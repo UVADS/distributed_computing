@@ -9,10 +9,11 @@
 
 ---
 
-### Deliverables This Week
+### Upcoming Deliverables
 
-- Quiz: Spark Fundamentals
-- Lab: Analytics on Social Data
+Due by Friday, Sep 6 at 5pm ET
+- Quiz 1: Big Data Intro
+- Lab 1: Python Warmup and Logfile Analytics
 
 ---
 
@@ -23,11 +24,11 @@
 - Review RDDs notebook
   - Basics
   - Types of transformations
-  - This part will help w HW: Example of text processing with map
+
+(Time permitting)
 - Review Pair RDDs notebook
   - transformations
   - working w bigrams
-- Review the Lab Assignment
 
 --- 
 
