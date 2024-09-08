@@ -25,10 +25,5 @@ Due by Friday, Sep 6 at 5pm ET
   - Basics
   - Types of transformations
 
-(Time permitting)
-- Review Pair RDDs notebook
-  - transformations
-  - working w bigrams
-
 --- 
 

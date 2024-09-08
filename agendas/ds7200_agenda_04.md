@@ -11,17 +11,11 @@
 
 ### Deliverables This Week
 
-- Quiz: Spark Fundamentals
-- Lab: Analytics on Social Data
+- Quiz: Spark Fundamentals Due Friday, Sep 13
 
 ---
 
 ### Distributed Systems Ch 1 Introduction on Scalability - slide review
-
-### Running Spark on a cluster
-
-- Discuss cores / nodes / driver / worker / executor
-- Job / Stage / Task
 
 ### RDDs and Pair RDDs
 
@@ -29,8 +23,10 @@
   - transformations
   - working w bigrams
 
-### Work on Lab Assignment
+### Running Spark on a cluster
 
+- Discuss cores / nodes / driver / worker / executor
+- Job / Stage / Task
 
 --- 
 
