@@ -6,20 +6,9 @@
   
 ### Deliverables for Module
 
-- Quiz: Spark DataFrames and Spark SQL
-  be sure to review:  
-  - PySpark code examples  
-  - how to use SQL to query dataframes
-  - how to subset dataframes
-  - what is a schema and what are its benefits
-  - how to use `withColumn()`
+### Deliverables This Week
 
-- Lab: Commercial Data Analysis  
-  Demo how to get dataset
-
-- Team Project Checkpoint (ungraded)
-  - Research question/hypothesis
-  - Potential data sources (description and source location)
+- Quiz: Spark Fundamentals Due Friday, Sep 13
 
 ---
 
