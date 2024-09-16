@@ -13,4 +13,4 @@ Due Friday, Sep 20 @ 5:00pm ET
 
 - Review systems architecture example: Design a Unique ID Generator
 - Discuss CAP Theorem
-
+- (time permitting) Discuss Catalyst Optimizer
