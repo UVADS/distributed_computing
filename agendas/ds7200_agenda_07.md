@@ -14,5 +14,6 @@ Due Friday, Sep 20 @ 5:00pm ET
 ---
 
 - Discuss Catalyst Optimizer
+- Brief review of paper: Spark SQL: Relational Data Processing in Spark
 - Project work
 
