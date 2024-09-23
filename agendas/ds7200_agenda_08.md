@@ -21,5 +21,6 @@ Due Friday, Sep 27 @ 5:00pm ET
 - Review Sparsity NB
 - Review Classification NB
 - Review Regression NB
+- Kick off lab on [MLlib: Supervised Learning](https://github.com/UVADS/distributed_computing/blob/main/04_mllib_intro_and_supervised_learning/lab_supervised_learning.ipynb)
 
 
