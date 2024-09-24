@@ -3,21 +3,21 @@
 
 ### Deliverables This Week
 
-- Quiz: Module 4 Quiz - MLlib
+Due Friday, Sep 27 @ 5:00pm ET
+
+- Lab: Supervised Learning
+
+- Quiz: Sparsity, MLlib Classification and Regression  
   be sure to review:  
   - which package uses LabeledPoint
   - for transformers, what fit() and transform() accomplish
   - there are two APIs in the MLlib package. Newer one supports DataFrames, and older one supports RDDs.
 
-
-- Lab on Supervised Learning
-- Journal: Modules 1-4
-
 ---
 
 ### Spark MLlib
 
-- Review Regression NB
+- Synopsis of MLlib classification and regression methods
 - Time to work on lab, project
 
 
