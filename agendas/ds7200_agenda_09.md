@@ -17,7 +17,7 @@ Due Friday, Sep 27 @ 5:00pm ET
 
 ### Spark MLlib
 
-- Synopsis of MLlib classification and regression methods
+- Review deck: mllib_method_summary
 - Time to work on lab, project
 
 
