@@ -12,6 +12,6 @@
 ### Dimension Reduction and Clustering
 
 - Review notebook: MLlib – Clustering
-- Review notebook: Dimension Reduction
+- Review slides: k-means Extensions
 - Kickoff lab: Clustering Fidelity Mutual Funds
 
