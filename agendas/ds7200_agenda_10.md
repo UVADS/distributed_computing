@@ -2,7 +2,7 @@
 
 ---
 
-### Deliverables due Friday, Oct 4 @ 5:00pm ET
+### Deliverables due Wednesday, Oct 9 @ 5:00pm ET
 
 - Lab: Clustering Fidelity Mutual Funds
 - Quiz: Dimension Reduction, MLlib Clustering
