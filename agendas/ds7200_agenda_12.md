@@ -1,9 +1,5 @@
 ## DS 7200 Computing III Distributed Computing: Agenda 12
 
-### Admin Items
-
-- Posted user artist dataset
-
 ---
 
 ### Deliverables due Wednesday, Oct 9 @ 5:00pm ET
