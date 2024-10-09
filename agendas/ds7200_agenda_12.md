@@ -2,6 +2,9 @@
 
 ---
 
+Admin: No class Monday; Reading Day
+---
+
 ### Deliverables due Wednesday, Oct 9 @ 5:00pm ET
 
 - Lab: Clustering Fidelity Mutual Funds
