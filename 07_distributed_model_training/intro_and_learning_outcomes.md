@@ -1,13 +1,13 @@
 ## INTRODUCTION
 
-In this final module, you will learn about vector stores and see how they are used in practice. You will get started with the commercial vector store Pinecone and use it for semantic search. The *random projection* method can be a useful way to speed up search while making an approximation. You will read a paper demonstrating its utility.
+For massive training sets, it may not be possible to train a model on a single machine. This may be the case for deep learning models. In distributed training, the workload to train a model is split up and shared among worker nodes. We will study different approaches for distributed training to understand their strengths and challenges.
 
 ## Learning Objectives
 
 At the conclusion of this module, you should be able to:
 
-- Explain uses cases for vector embeddings
-- Explain the value of a vector store
-- Apply Pinecone for semantic search
-- Explain the Random Projection method and its benefits
-- Execute an end-to-end predictive modeling project using a large dataset
+- Explain approaches for distributed model training
+- Identify the benefits and challenges of synchronous and asynchronous training
+- Explain the parameter server and Allreduce algorithms
+- Explain why Ring-Allreduce can work better than Allreduce
+- Progress toward executing an end-to-end predictive modeling project using a large dataset.
