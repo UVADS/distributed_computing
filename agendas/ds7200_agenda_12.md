@@ -18,6 +18,8 @@ Admin: No class Monday; Reading Day
   - recommender systems (high-level concepts)
 
 - Lab: Recommender Systems Using Music Tracks from Autoscrobbler
+  
+- Journaling: Modules 4-6 completed
 
 
 ---
