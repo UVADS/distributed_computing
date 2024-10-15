@@ -24,8 +24,6 @@ Admin: No class Monday; Reading Day
 
 ---
 
-- Review Jupyter Notebook: ML Feature Utilities
-
 - Review Jupyter Notebook: ML Pipelines
 
 - Review Jupyter Notebook: Recommender Systems
