@@ -11,8 +11,8 @@
 
 - Review Jupyter Notebook: Distributed Model Training
 
-  > Data parallelism vs model parallelism
-  > Synchronous training
+  > Data parallelism vs model parallelism  
+  > Synchronous training  
   > Allreduce
 
 - Group work on projects
