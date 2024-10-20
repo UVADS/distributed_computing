@@ -15,5 +15,7 @@
   > Synchronous training  
   > Allreduce
 
+- Review paper on [Distributed ML](https://www.cs.cornell.edu/courses/cs4787/2019sp/notes/lecture22.pdf)
+
 - Group work on projects
 
