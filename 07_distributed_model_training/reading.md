@@ -8,8 +8,6 @@ Note: Some of these readings are relatively short
 
 [Distributed Training: Guide for Data Scientists](https://neptune.ai/blog/distributed-training)
 
-[Distributed model training II: Parameter Server and AllReduce](http://www.juyang.co/distributed-model-training-ii-parameter-server-and-allreduce/)
-
 [Distributed Machine Learning and the Parameter Server](https://www.cs.cornell.edu/courses/cs4787/2019sp/notes/lecture22.pdf)
 
 Uber Engineering introduced Horovod, an open-source component of Michelangelo’s deep learning toolkit which makes it easier to start and speed up distributed deep learning with TensorFlow.  
