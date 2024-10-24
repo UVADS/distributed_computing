@@ -13,5 +13,4 @@ Note: Some of these readings are relatively short
 Google AI developed a software framework called `DistBelief` that can utilize computing clusters with thousands of machines to train large models.
 [Large Scale Distributed Deep Networks](https://static.googleusercontent.com/media/research.google.com/en//archive/large_deep_networks_nips2012.pdf)
 
-Uber Engineering introduced Horovod, an open-source component of Michelangelo’s deep learning toolkit which makes it easier to start and speed up distributed deep learning with TensorFlow.  
-[Horovod: fast and easy distributed deep learning in TensorFlow](https://arxiv.org/pdf/1802.05799)
+Uber Engineering introduced Horovod, an open-source component of Michelangelo’s deep learning toolkit which makes it easier to start and speed up distributed deep learning with TensorFlow. [Horovod: fast and easy distributed deep learning in TensorFlow](https://arxiv.org/pdf/1802.05799)
