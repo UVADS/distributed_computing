@@ -1,19 +1,13 @@
-## DS 7200 Computing III Distributed Computing: Agenda 14
-
-### Admin Items
-
-This module does not have jupyter notebooks
-It contains more videos (some with yours truly)
+## DS 7200 Computing III Distributed Computing: Agenda 16
 
 
 ---
 
-### Deliverables This Week
+### Deliverables due Friday, Nov xx @ 5:00pm ET
 
 - Quiz on AWS services
 - Lab on Amazon S3 due at end of this module
 - Begin Lab on Amazon S3/IAM/EC2 due at end of next module
-- Submit journal entries for modules 5-8
 
 ---
 
