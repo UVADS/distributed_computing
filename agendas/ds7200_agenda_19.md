@@ -1,5 +1,8 @@
 ## DS 7200 Computing III Distributed Computing: Agenda 19
 
+### Admin
+- No class Monday, Nov 11th
+
 ### Deliverables due Friday, Nov 8 @ 5:00pm ET
 - Lab: Amazon S3/IAM/EC2
 
