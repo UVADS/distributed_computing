@@ -6,4 +6,4 @@ Please read the following:
 - What is a [Data Lake?](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)  
 - What is a [Data Lakehouse?](https://www.databricks.com/blog/2020/01/30/what-is-a-data-lakehouse.html)   
  
-- Optional technical [paper](https://collab.its.virginia.edu/access/lessonbuilder/item/2078375/group/723caf23-7c47-4bde-acd1-b6ad2d591d57/DeltaLake/data_lakehouse.pdf) on Delta Lake from Databricks  
+- Optional technical [paper](https://github.com/UVADS/distributed_computing/blob/main/11_delta_lakes/data_lakehouse.pdf) on Delta Lake from Databricks  
