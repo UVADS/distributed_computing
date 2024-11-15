@@ -1,4 +1,4 @@
-## DS 7200 Computing III Distributed Computing: Agenda 18
+## DS 7200 Computing III Distributed Computing: Agenda 21
 
 ### Admin Items
 
@@ -6,7 +6,7 @@
 
 ---
 
-### Deliverables This Week
+### Deliverables due Friday, Nov 22 @ 5:00pm ET
 
 1) **Quiz**  
 
@@ -14,7 +14,7 @@ Be sure to understand:
 - features of Delta Lake
 - how to implement the features of Delta Lake (time travel, upserts, reading, writing)
 
-2) **Lab: Delta lakes**
+2) **Lab: Criminal Expungement with Delta lakes**
 
 
 ### Content 
