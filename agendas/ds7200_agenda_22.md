@@ -18,6 +18,7 @@ Be sure to understand:
 
 1) Journal entries for Modules 11, 12
 
+---
 
 ### Content 
 
