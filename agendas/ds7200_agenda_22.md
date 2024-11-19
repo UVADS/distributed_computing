@@ -3,6 +3,12 @@
 
 ---
 
+### ADMIN
+
+Before class on Monday, read paper: Random Projection in Dimensionality Reduction: Applications to Image and Text Data
+
+Link is found in Reading List
+
 ### Deliverables due Friday, Nov 22 @ 5:00pm ET
 
 1) **Quiz**  
