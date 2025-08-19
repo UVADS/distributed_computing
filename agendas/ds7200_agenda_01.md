@@ -16,7 +16,7 @@
 
 ### Upcoming Deliverables
 
-Due by Friday, Sep 6 at 5pm ET
+Due by Friday, Sep 5 at 11:59pm ET
 - Quiz 1: Big Data Intro
 - Lab 1: Python Warmup and Logfile Analytics
 
@@ -27,7 +27,7 @@ Due by Friday, Sep 6 at 5pm ET
 
 As time permits:
 
-- Review [Rivanna OpenOnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard/batch_connect/sessions)
+- Review [Rivanna OpenOnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard)
 - Review file structure, notebooks
 - Brief Review NB: Big Data Systems Foundations  
 - Brief Review NB: Spark Getting Started  
