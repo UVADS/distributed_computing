@@ -66,7 +66,7 @@ You can use this space to organize files for your project:
 3. remove the folder and contents when the course ends
 
 **COMPUTE SETUP**  
-We have a kernel for Spark 3.3. To use this, you'll need to run the following command from a terminal:
+We have a Jupyter kernel called `DS7200 Spark 3.3`. To use this, you'll need to run the following command from a terminal:
 
 `/standard/ds7200-apt4c/setup.sh`
 
