@@ -58,14 +58,14 @@ Number of hours: when time is up, compute will end. JupyterLab notebooks save co
 
 Rivanna used for most compute
 
-**STORAGE**
+**STORAGE**  
 Shared space: `/standard/ds7200-apt4c` for project data  
 You can use this space to organize files for your project: 
 1. create folder
 2. save relevant files
 3. remove the folder and contents when the course ends
 
-**COMPUTE SETUP**
+**COMPUTE SETUP**  
 We have a kernel for Spark 3.3. To use this, you'll need to run the following command from a terminal:
 
 `/standard/ds7200-apt4c/setup.sh`
