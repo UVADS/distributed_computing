@@ -4,12 +4,14 @@
 
 ### Admin Items
 
+- Due to travel, we won't meet on Labor Day
 - Brief intro / background
 - Review Syllabus
 - Review Canvas
 - Communications:
   - Teams for IM
   - Email TA for grading questions
+    - Office Hours: possible times Thursdays 12–5pm or Fridays 10am–5pm  
 - Review repo page: `setup.md`
 
 ---
