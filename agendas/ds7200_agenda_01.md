@@ -11,7 +11,8 @@
 - Communications:
   - Teams for IM
   - Email TA for grading questions
-    - Office Hours: possible times Thursdays 12–5pm or Fridays 10am–5pm  
+    - Office Hours: best would be Thurs 2pm-3pm on Zoom  
+      possible times Thursdays 12–5pm or Fridays 10am–5pm  
 - Review repo page: `setup.md`
 
 ---
