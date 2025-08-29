@@ -3,15 +3,12 @@
 
 ### Admin Items
 
-Office hours on Canvas
-- My office hours Thursday
-- TA office hours Friday
 
 ---
 
 ### Upcoming Deliverables
 
-Due by Friday, Sep 6 at 5pm ET
+Due by Friday, Sep 5 at 11:59pm ET
 - Quiz 1: Big Data Intro
 - Lab 1: Python Warmup and Logfile Analytics
 
