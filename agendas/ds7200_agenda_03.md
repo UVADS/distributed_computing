@@ -11,9 +11,8 @@
 
 ### Upcoming Deliverables
 
-Due by Friday, Sep 6 at 5pm ET
-- Quiz 1: Big Data Intro
-- Lab 1: Python Warmup and Logfile Analytics
+Due by Friday, Sep 12 at 11:59pm ET
+- Module 2 Quiz: Spark Fundamentals
 
 ---
 
