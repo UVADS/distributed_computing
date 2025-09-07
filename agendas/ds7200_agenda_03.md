@@ -18,11 +18,10 @@ Due by Friday, Sep 12 at 11:59pm ET
 
 ### Distributed Systems Ch 1 Introduction - slide review
 
-### RDDs and Pair RDDs
+### Running Spark on a cluster
 
-- Review RDDs notebook
-  - Basics
-  - Types of transformations
+- Discuss cores / nodes / driver / worker / executor
+- Job / Stage / Task
 
 --- 
 
