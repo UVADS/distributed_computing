@@ -14,8 +14,7 @@ Deliverables Due Friday, Sep 26th at 11:59pm ET:
 
 ### Spark SQL and DataFrames
 
-- Review systems architecture examples
-- Review Spark SQL and DataFrames notebook
+- Finish Review Spark SQL and DataFrames notebook
   
   Dataframes  
   - The structure makes use of distributed computing  
