@@ -1,4 +1,4 @@
-## DS 7200 Computing III Distributed Computing: Agenda 8
+## DS 7200 Computing III Distributed Computing: Agenda 08
 
 ---
 
