@@ -17,7 +17,8 @@
 
 ---
 
-- Review Jupyter Notebook: ML Pipelines
 - Review Jupyter Notebook: Recommender Systems
-- Kickoff programming assignment: Recommender Systems
+- Kick off programming assignment: Recommender Systems
+- Review Jupyter Notebook: ML Pipelines
+
 
