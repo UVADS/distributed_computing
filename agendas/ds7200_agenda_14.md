@@ -14,7 +14,7 @@
 
 ---
 
-- Discuss AWS outage in the news
+- Discuss AWS outage in the news  
 https://www.zdnet.com/home-and-office/networking/the-massive-aws-outage-that-broke-half-the-internet-is-finally-over-heres-what-happened/
 
 - Discuss paper: [Large Scale Distributed Deep Networks](https://static.googleusercontent.com/media/research.google.com/en//archive/large_deep_networks_nips2012.pdf)
