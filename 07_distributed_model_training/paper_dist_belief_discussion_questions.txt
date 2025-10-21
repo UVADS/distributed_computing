@@ -1,0 +1,14 @@
+Large Scale Distributed Deep Networks
+Dean et. al.
+
+Carefully read the paper. We will discuss the questions below. 
+
+---
+
+Questions for Discussion:
+
+1) What was novel about this paper?
+
+2) What are the properties of the Downpour SGD algorithm and how does it work?
+
+3) When distributing a neural network model across machines, what needs to happen?
