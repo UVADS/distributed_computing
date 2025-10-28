@@ -15,5 +15,5 @@
 ---
 
 Tasks  
-- Work on Lab together: AWS Services I
+- Work on Lab together: Connecting Amazon Services: S3, IAM, EC2
 
