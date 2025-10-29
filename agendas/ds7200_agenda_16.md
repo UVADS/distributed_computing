@@ -17,3 +17,5 @@
 Tasks  
 - Work on Lab together: Connecting Amazon Services: S3, IAM, EC2
 
+- PySpark data hotspot demo
+
