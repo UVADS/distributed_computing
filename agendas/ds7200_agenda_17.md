@@ -17,4 +17,4 @@
 
 - Review slides: Consistent Hashing
 - Ungraded Lab: Consistent Hashing
-- Kafka intro (time permitting)
+- Kafka intro
