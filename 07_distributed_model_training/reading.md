@@ -15,4 +15,4 @@ Google AI developed a software framework called `DistBelief` that can utilize co
 
 Uber Engineering introduced Horovod, an open-source component of Michelangelo’s deep learning toolkit which makes it easier to start and speed up distributed deep learning with TensorFlow. [Horovod: fast and easy distributed deep learning in TensorFlow](https://arxiv.org/pdf/1802.05799)
 
-[Communication-Efficient Learning of Deep Networks from Decentralized Data](https://arxiv.org/abs/1602.05629)
+Foundational paper on Federated Learning, which allows for global model development on distributed data that can't be moved from locally-partitioned data. [Communication-Efficient Learning of Deep Networks from Decentralized Data](https://arxiv.org/abs/1602.05629)
