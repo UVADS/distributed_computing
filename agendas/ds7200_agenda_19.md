@@ -10,6 +10,6 @@
 
 ### Content
 
-- Spark Streaming Notebook (time permitting)
+- Spark Streaming Notebook
 - Spark Streaming Demo
 - Time to work on projects
