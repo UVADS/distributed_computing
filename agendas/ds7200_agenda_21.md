@@ -3,7 +3,7 @@
 
 ---
 
-### ADMIN
+### Admin Items
 
 Before class on Monday, read paper: Random Projection in Dimensionality Reduction: Applications to Image and Text Data
 
