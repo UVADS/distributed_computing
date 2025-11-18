@@ -23,7 +23,7 @@ Link is found in Reading List
   - Embeddings
   - Retrieval Augmented Generation (RAG) 
 
-- Semantic Search Lab  
+- Semantic Search [Lab](https://colab.research.google.com/github/pinecone-io/examples/blob/master/docs/semantic-search.ipynb)  
   We use Pinecone for semantic search
 
 
