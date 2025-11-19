@@ -18,6 +18,7 @@ Link is found in Reading List
 
 ### Content 
 
+- Brief discussion of Cloudflare [outage](https://blog.cloudflare.com/18-november-2025-outage/)
 - Brief discussion of: 
   - Vector Stores
   - Embeddings
