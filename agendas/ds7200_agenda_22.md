@@ -3,6 +3,11 @@
 
 ---
 
+### Admin Items
+
+No class this Wed (Thanksgiving)
+
+---
 
 ### Deliverables due Friday, Nov 28 @ 11:59pm ET
 
