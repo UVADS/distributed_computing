@@ -4,21 +4,18 @@
 
 ### Admin Items
 
-- Due to travel, we won't meet on Labor Day
 - Brief intro / background
 - Review Syllabus
 - Review Canvas
 - Communications:
-  - Teams for IM
   - Email TA for grading questions
-    - Office Hours: Thurs 2pm-3pm on Zoom  
 - Review repo page: `setup.md`
 
 ---
 
 ### Upcoming Deliverables
 
-Due by Friday, Sep 5 at 11:59pm ET
+Due by Friday, Sep 4 at 11:59pm ET
 - Quiz 1: Big Data Intro
 - Lab 1: Python Warmup and Logfile Analytics
 
