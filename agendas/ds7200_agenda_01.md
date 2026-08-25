@@ -63,8 +63,7 @@ You can use this space to organize files for your project:
 3. remove the folder and contents when the course ends
 
 **COMPUTE SETUP**  
-We have a Jupyter kernel called `DS7200 Spark 3.3`. To use this, you'll need to run the following command from a terminal:
+You will use the Jupyter kernel called `PySpark 4.0.0`. 
 
-`/standard/ds7200-apt4c/setup.sh`
+Each PySpark notebook should already have this kernel set at the top right, but if not, please select it.
 
-If you run this in a JupyterLab terminal, you will need to refresh the browser tab. Otherwise, the next time you open JupyterLab, the kernel will be available. 
