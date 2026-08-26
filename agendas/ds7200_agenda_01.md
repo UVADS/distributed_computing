@@ -10,6 +10,7 @@
 - Communications:
   - Email TA for grading questions
 - Review repo page: `setup.md`
+- For class on Monday, read the Map Reduce paper (in the reading) and we'll discuss
 
 ---
 
