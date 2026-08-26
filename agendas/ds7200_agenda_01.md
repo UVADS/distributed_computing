@@ -25,13 +25,10 @@ Due by Friday, Sep 4 at 11:59pm ET
 
 ### Activity
 
-As time permits:
-
 - Review [Rivanna OpenOnDemand](https://ood.hpc.virginia.edu/pun/sys/dashboard)
 - Review file structure, notebooks
 - Brief Review NB: Big Data Systems Foundations  
-- Brief Review NB: Spark Getting Started  
-- Brief Review: Lab
+- Brief Review NB: MapReduce in Spark
 
 ---
 
