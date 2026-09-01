@@ -18,8 +18,6 @@ Due by Friday, Sep 4 at 11:59pm ET
 - Discuss MapReduce paper
 - Slides: Consistent hashing
 - Slides: CAP theorem
-
-Time permitting:
 - Review notebook: RunningSparkOnACluster.ipynb
 
 ---
