@@ -1,2 +1,5 @@
+For the commercial data analysis lab, the data file is large so it's saved on Rivanna. The full path is shown below.
+In the Jupyter notebook for the lab, you'll set this path to import the data.
+
 full path with filename:
 /standard/ds7200-apt4c/large_datasets/part-00000-a159c41a-bc58-4476-9b78-c437667f9c2b-c000.json.gz
