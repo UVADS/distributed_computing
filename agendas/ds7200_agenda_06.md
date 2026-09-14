@@ -7,6 +7,11 @@
 Due by Friday, Sep 18 at 11:59pm ET
 - Lab 2: Commercial Data Analysis
 
+Due by Friday, Sep 25 at 11:59pm ET
+- Quiz 3: Spark SQL and DataFrames
+- Project Proposal
+- Journaling: Modules 1-3
+
 ---
 
 ### Activities
