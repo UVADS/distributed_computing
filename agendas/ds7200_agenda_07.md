@@ -17,5 +17,5 @@ Due by Friday, Sep 25 at 11:59pm ET
 ### Activities
 
 - Slides: System Design - Unique ID Generator
-- Research: Deeper dive into Parquet and Catalyst
-- Team projects
+- Demo: Hotspots
+- Research: Deeper dive into Parquet and Catalyst (file shared at class time)
