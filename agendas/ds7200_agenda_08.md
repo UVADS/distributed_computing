@@ -17,17 +17,17 @@ Due by Friday, Oct 2nd at 11:59pm ET:
 
 ### Activities
 
-- Spark MLlib
 - Review Sparsity NB
   - Sparse Vectors
   - Sparse Matrices
+
+- Slides: MLlib Implementation Details
 
 - Review Classification NB
   - ML in Spark
   - Classification tasks
   - fit, transform, evaluate
   - Some transformations: VectorAssembler, StandardScaler
-
 
 - Review Regression NB
   - Regression tasks
