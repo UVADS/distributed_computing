@@ -18,4 +18,4 @@ Due by Friday, Sep 25 at 11:59pm ET
 
 - Slides: System Design - Unique ID Generator
 - Demo: Hotspots
-- Research: Deeper dive into Parquet and Catalyst (file shared at class time)
+- Research: Deeper dive into Parquet and Catalyst (instructions and Jupyter notebook files shared at class time)
