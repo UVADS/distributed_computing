@@ -28,9 +28,3 @@ Due by Friday, Oct 2nd at 11:59pm ET:
   - Classification tasks
   - fit, transform, evaluate
   - Some transformations: VectorAssembler, StandardScaler
-
-- Review Regression NB
-  - Regression tasks
-  - fit, transform, evaluate
-
-- [time permitting] Kick off lab on MLlib: Supervised Learning
