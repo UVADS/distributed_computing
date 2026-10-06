@@ -20,4 +20,4 @@ Due by Friday, Oct 16th at 11:59pm ET:
 
 - Dimension reduction notebook
 - Slides on SVD
-- Recommender Systems notebook (time permitting)
+- Experiments: SVD + regression (instructor to provide notebook)
