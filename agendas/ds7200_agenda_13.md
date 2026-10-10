@@ -8,6 +8,9 @@ Due by Friday, Oct 16th at 11:59pm ET:
 - Quiz 6: ML pipelines, Transformations, and Recommender Systems
 - Journaling: Modules 1-6 completed
 
+Due by Friday, Oct 23rd at 11:59pm ET:
+- Quiz 7: Distributed Model Training
+
 Read for class discussion Oct 19th:  
 - Large Scale Distributed Deep Networks
 
