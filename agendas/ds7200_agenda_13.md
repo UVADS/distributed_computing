@@ -14,8 +14,8 @@ Due by Friday, Oct 16th at 11:59pm ET:
 - Review Jupyter Notebook: Recommender Systems
 - Kick off programming assignment: Recommender Systems
 - Review Jupyter Notebook: ML Pipelines
-- Review Jupyter Notebook: Feature Utilities
-  In particular:
+- Review Jupyter Notebook: Feature Utilities  
+  In particular:  
   - MaxAbsScaler
   - OneHotEncoder
 
