@@ -11,12 +11,16 @@ Due by Friday, Oct 16th at 11:59pm ET:
 Due by Friday, Oct 23rd at 11:59pm ET:
 - Quiz 7: Distributed Model Training
 
+---
+
 Read for class discussion Oct 19th:  
 - Large Scale Distributed Deep Networks
 
 Questions [here](https://github.com/UVADS/distributed_computing/blob/main/07_distributed_model_training/paper_dist_belief_discussion_questions.txt) 
 
 ---
+
+### Content
 
 - Review Jupyter Notebook: Recommender Systems
 - Kick off programming assignment: Recommender Systems
