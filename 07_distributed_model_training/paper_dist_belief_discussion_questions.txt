@@ -11,4 +11,4 @@ Questions for Discussion:
 
 2) What are the properties of the Downpour SGD algorithm and how does it work?
 
-3) When distributing a neural network model across machines, what needs to happen?
+3) What are the differences between Downpour and Sandblaster?
