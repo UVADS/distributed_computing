@@ -8,7 +8,8 @@ Due by Friday, Oct 23rd at 11:59pm ET:
 
 ---
 
+- Review Jupyter Notebook: Distributed Model Training
+
 - Discuss paper and questions: Large Scale Distributed Deep Networks
 
-- Review Jupyter Notebook: Distributed Model Training
 
