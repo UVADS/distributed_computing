@@ -15,6 +15,12 @@
 ---
 
 Tasks  
+- Demo of Amazon S3  
+- Demo of Amazon EC2
+- Work on Lab together: Build Static Website with Amazon S3
+- aws_iam_intro.ppt (Time Permitting)
+
+
 - Work on Lab together: Connecting Amazon Services: S3, IAM, EC2
 
 - PySpark data hotspot demo
