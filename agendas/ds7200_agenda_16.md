@@ -17,4 +17,4 @@ Tasks
 - Gorila with Claude Code
   - instructor to share: claude_code_gorila_prompts
 
-- [time permitting] Amazon Identity and Access Management (IAM) 
+- Review slides: Amazon Identity and Access Management (IAM) 
