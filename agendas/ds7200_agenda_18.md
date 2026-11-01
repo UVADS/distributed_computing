@@ -3,13 +3,12 @@
 
 ---
 
-Due by Friday, Oct 30th at 11:59pm ET:
-- Lab 6: Build Static Website with Amazon S3
-- Quiz 8: AWS
-
 Due by Wednesday, Nov 4th at 11:59pm ET:
 - Lab 7: Connecting Amazon Services: S3, IAM, EC2
 
+Due by Friday, Nov 10th at 11:59pm ET:
+- Quiz 9: Kafka and Data Contracts
+- Journaling: Modules 1-9 completed
 ---
 
 Tasks  
