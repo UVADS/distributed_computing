@@ -13,3 +13,4 @@ Due by Wednesday, Nov 11th at 11:59pm ET:
 
 Tasks  
 - Demo in class: Lab 7: Connecting Amazon Services: S3, IAM, EC2
+- Review slides: Schema Enforcement in Streaming
