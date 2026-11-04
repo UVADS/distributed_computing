@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MiniKafka Playground</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* base reset (the hosted version gets this from claude.ai) */
+*, *::before, *::after { box-sizing: border-box; }
+:root { color-scheme: light; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+/* Layout: the topic's partition logs are the diagram (left, wide); producer, consumer groups and broker controls sit beside it (right), stacking under it on phones. */
+:root {
+  --bg: #f2f4f7;
+  --surface: #ffffff;
+  --surface-2: #e9edf2;
+  --ink: #1b2440;
+  --muted: #5a6479;
+  --line: #d6dbe4;
+  --line-strong: #aeb6c4;
+  --g1: #b35600;          /* fraud-detector (UVA orange, darkened for text) */
+  --g2: #17707f;          /* analytics */
+  --danger: #b8322a;
+  --focus: #2f6fd6;
+  --k0: #f5d6b3; --k1: #cfe1f5; --k2: #d5ebc8; --k3: #e8d3f0; --k4: #f6e4a3; --k5: #f2c9cf;
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1420; --surface: #161d2c; --surface-2: #1e2738; --ink: #e5e9f1; --muted: #98a2b6;
+    --line: #283147; --line-strong: #46516a; --g1: #f39a43; --g2: #55bccb; --danger: #f2786c; --focus: #7aa7f2;
+    --k0: #6a4318; --k1: #24456b; --k2: #2f5527; --k3: #4d3060; --k4: #5c4f18; --k5: #63303a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1420; --surface: #161d2c; --surface-2: #1e2738; --ink: #e5e9f1; --muted: #98a2b6;
+  --line: #283147; --line-strong: #46516a; --g1: #f39a43; --g2: #55bccb; --danger: #f2786c; --focus: #7aa7f2;
+  --k0: #6a4318; --k1: #24456b; --k2: #2f5527; --k3: #4d3060; --k4: #5c4f18; --k5: #63303a;
+  color-scheme: dark;
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 14px; line-height: 1.5; }
+.page {
+  max-width: 1260px; margin: 0 auto;
+  padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 24px;
+}
+header { display: grid; gap: 6px; max-width: 72ch; }
+.eyebrow { font: 500 12px/1 var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 700 clamp(26px, 4vw, 36px)/1.1 var(--font-display); margin: 0; letter-spacing: -.01em; text-wrap: balance; }
+h2 { font: 700 17px/1.2 var(--font-display); margin: 0; text-wrap: balance; }
+h3 { font: 600 14px/1.2 var(--font-body); margin: 0; }
+p { margin: 0; }
+.lede { color: var(--muted); font-size: 15px; }
+code, .mono { font-family: var(--font-mono); font-size: 12.5px; }
+
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; }
+@media (max-width: 920px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.col { display: grid; gap: 20px; min-width: 0; }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 12px; min-width: 0; }
+.panel-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 12px; }
+.sub { color: var(--muted); font-size: 13px; }
+
+/* ---- topic diagram ---- */
+figure { margin: 0; display: grid; gap: 14px; min-width: 0; }
+figcaption { color: var(--muted); font-size: 13px; max-width: 75ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.legend .lbl { color: var(--muted); font-size: 12px; margin-right: 4px; }
+.keychip { font: 500 12px var(--font-mono); border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px 9px; cursor: pointer; color: var(--ink); }
+.keychip[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 1px; }
+.k0 { background: var(--k0); } .k1 { background: var(--k1); } .k2 { background: var(--k2); }
+.k3 { background: var(--k3); } .k4 { background: var(--k4); } .k5 { background: var(--k5); }
+
+.lanes { display: grid; gap: 14px; }
+.lane { border-top: 1px solid var(--line); padding-top: 10px; display: grid; gap: 6px; min-width: 0; }
+.lane-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.pname { font: 700 14px var(--font-display); }
+.pmeta { font: 12px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.owners { display: flex; flex-wrap: wrap; gap: 4px 10px; margin-left: auto; }
+.own { font-size: 12px; display: inline-flex; align-items: center; gap: 5px; }
+.own i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+.own.g1 { color: var(--g1); } .own.g1 i { background: var(--g1); }
+.own.g2 { color: var(--g2); } .own.g2 i { background: var(--g2); }
+.own.none { color: var(--muted); }
+
+.track-scroll { overflow-x: auto; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.track { position: relative; height: 104px; }
+.seg { position: absolute; top: 0; font: 10.5px/12px var(--font-mono); color: var(--muted); white-space: nowrap; }
+.seg::after { content: ""; position: absolute; left: 0; right: 0; top: 13px; border-top: 1px solid var(--line-strong); }
+.seg.gone { text-decoration: line-through; opacity: .7; }
+.cell {
+  position: absolute; top: 18px; width: 26px; height: 30px; border-radius: 4px;
+  display: grid; place-items: center; font: 500 11px var(--font-mono); color: var(--ink);
+  border: 1px solid color-mix(in oklab, var(--ink) 18%, transparent);
+  font-variant-numeric: tabular-nums; transition: opacity .2s;
+}
+.cell.gone { background: transparent; border: 1px dashed var(--line-strong); color: var(--muted); text-decoration: line-through; }
+.cell.dim { opacity: .18; }
+.cell.slot { background: transparent; border: 1.5px dashed var(--muted); color: var(--muted); }
+.cell.new { animation: pop .55s ease-out; }
+.cell.flash-g1 { animation: flash1 1s ease-out; }
+.cell.flash-g2 { animation: flash2 1s ease-out; }
+@keyframes pop { from { transform: translateY(-14px) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes flash1 { 0%, 60% { box-shadow: 0 0 0 3px var(--g1); } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes flash2 { 0%, 60% { box-shadow: 0 0 0 3px var(--g2); } 100% { box-shadow: 0 0 0 0 transparent; } }
+.marker { position: absolute; display: flex; align-items: center; gap: 4px; font: 500 11px var(--font-mono); white-space: nowrap; transform: translateX(-5px); transition: left .35s ease; }
+.marker svg { width: 10px; height: 9px; flex: none; }
+.marker.g1 { top: 56px; color: var(--g1); }
+.marker.g2 { top: 78px; color: var(--g2); }
+.marker.bad { color: var(--danger); }
+
+/* ---- controls ---- */
+.btn {
+  font: 500 13px var(--font-body); color: var(--ink); background: var(--surface);
+  border: 1px solid var(--line-strong); border-radius: 6px; padding: 6px 11px; cursor: pointer;
+}
+.btn:hover { background: var(--surface-2); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.primary { background: var(--ink); color: var(--surface); border-color: var(--ink); }
+.btn.primary:hover { background: color-mix(in oklab, var(--ink) 85%, var(--surface)); }
+.btn:focus-visible, .keychip:focus-visible, .chip:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.keybtn { font-family: var(--font-mono); font-size: 12.5px; border-color: color-mix(in oklab, var(--ink) 25%, transparent); }
+.keybtn.k0, .keybtn.k1, .keybtn.k2, .keybtn.k3, .keybtn.k4, .keybtn.k5 { color: var(--ink); }
+.keybtn.k0 { background: var(--k0); } .keybtn.k1 { background: var(--k1); } .keybtn.k2 { background: var(--k2); }
+.keybtn.k3 { background: var(--k3); } .keybtn.k4 { background: var(--k4); } .keybtn.k5 { background: var(--k5); }
+.keybtn:hover { filter: brightness(.96); }
+.toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+.toggle input { width: 16px; height: 16px; accent-color: var(--ink); }
+
+.readout { font: 12.5px/1.6 var(--font-mono); background: var(--surface-2); border-radius: 6px; padding: 10px 12px; display: grid; grid-template-columns: auto 1fr; gap: 0 14px; font-variant-numeric: tabular-nums; }
+.readout dt { color: var(--muted); }
+.readout dd { margin: 0; overflow-wrap: anywhere; }
+
+.group { border-top: 3px solid var(--gc); padding-top: 12px; display: grid; gap: 10px; }
+.group + .group { margin-top: 6px; }
+.group.g1 { --gc: var(--g1); } .group.g2 { --gc: var(--g2); }
+.group-name { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.group-name h3 { color: var(--gc); font-family: var(--font-mono); font-size: 14px; }
+.lag { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.lag-num { font: 700 22px/1 var(--font-display); font-variant-numeric: tabular-nums; }
+.lag-lbl { color: var(--muted); font-size: 12.5px; }
+.lag-parts { font: 12px var(--font-mono); color: var(--muted); width: 100%; font-variant-numeric: tabular-nums; }
+.members { display: grid; gap: 4px; }
+.member { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; }
+.member .who { font-family: var(--font-mono); font-size: 12.5px; }
+.member .asg { color: var(--muted); font-size: 12.5px; margin-left: auto; }
+.member .asg.idle { color: var(--danger); }
+.chip { font: 13px var(--font-body); background: none; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); cursor: pointer; padding: 0 6px; line-height: 20px; }
+.chip:hover { color: var(--danger); border-color: var(--danger); }
+.empty { color: var(--muted); font-size: 13px; font-style: italic; }
+.err { color: var(--danger); font-size: 13px; border-left: 3px solid var(--danger); padding-left: 8px; }
+
+/* ---- event log ---- */
+.log { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font: 12.5px/1.5 var(--font-mono); max-height: 300px; overflow-y: auto; }
+.log li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; }
+.log .kind { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding-top: 1px; }
+.log .kind.poll { color: var(--ink); }
+.log .kind.rebalance, .log .kind.reset { color: var(--focus); }
+.log .kind.retention { color: var(--g1); }
+.log .kind.error { color: var(--danger); }
+.log .txt { overflow-wrap: anywhere; }
+
+.steps { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 75ch; }
+.steps li::marker { font: 600 13px var(--font-mono); color: var(--muted); }
+.steps .ref { color: var(--muted); font-size: 12.5px; }
+footer { color: var(--muted); font-size: 12.5px; max-width: 80ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cell.new, .cell.flash-g1, .cell.flash-g2 { animation: none; }
+  .marker, .cell { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header>
+    <span class="eyebrow">DS 7200 · Module 9 · Event streams</span>
+    <h1>MiniKafka Playground</h1>
+    <p class="lede">One topic, three partitions, two consumer groups. Produce records, add and remove consumers, poll, replay, and delete old data, then watch what happens to offsets and lag.</p>
+  </header>
+
+  <div class="grid">
+    <div class="col">
+      <section class="panel" aria-labelledby="topic-title">
+        <figure>
+          <div class="panel-head">
+            <h2 id="topic-title">Topic <span class="mono" style="font-size:15px">transactions</span></h2>
+            <span class="sub">3 partitions · segments of 5 records</span>
+          </div>
+          <div class="legend" id="legend"><span class="lbl">Keys (click to highlight):</span></div>
+          <div class="lanes" id="lanes" role="img" aria-label="Three partition logs. Each record sits in the partition its key hashes to. Triangles show where each consumer group will resume reading."></div>
+          <figcaption>Each row is one partition's log. Squares are records, labeled with their offset and colored by key. The dashed square is where the next record will go. Triangles mark each group's committed offset, the place it resumes from; the distance to the dashed square is the group's lag.</figcaption>
+        </figure>
+      </section>
+
+      <section class="panel" aria-labelledby="log-title">
+        <div class="panel-head">
+          <h2 id="log-title">Event log</h2>
+          <span class="sub">newest first</span>
+        </div>
+        <ul class="log" id="log" aria-live="polite"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="try-title">
+        <h2 id="try-title">Try this</h2>
+        <ol class="steps">
+          <li>Click <code>TERM-0</code> three times. Every record lands in partition 1, and its offsets keep counting up. <span class="ref">Notebook §3</span></li>
+          <li>Click a key in the legend. All of that key's records sit in one partition, in the order they were sent. Records in different partitions have no order relative to each other. <span class="ref">§5</span></li>
+          <li>Add consumers to <code>fraud-detector</code> until there are four. With three partitions, the fourth has nothing to read. <span class="ref">§7</span></li>
+          <li>Poll <code>analytics</code>, then reset it to earliest. Its lag jumps back to the whole log, and the next poll replays everything. <span class="ref">§8</span></li>
+          <li>Reset <code>analytics</code> to earliest, click Apply retention twice, then Poll <code>analytics</code>. Its committed offsets point at deleted data, so the poll fails with <code>OffsetOutOfRange</code> until you reset it. <span class="ref">§8</span></li>
+          <li>Turn on the live stream and auto-poll for <code>fraud-detector</code> only. One group keeps up while the other falls further behind. <span class="ref">§6–7</span></li>
+        </ol>
+      </section>
+    </div>
+
+    <div class="col">
+      <section class="panel" aria-labelledby="prod-title">
+        <div class="panel-head">
+          <h2 id="prod-title">Producer</h2>
+          <span class="sub">partition = crc32(key) % 3</span>
+        </div>
+        <div class="row" id="keybtns"></div>
+        <div class="row">
+          <button class="btn" id="random-btn" type="button">Random key</button>
+          <label class="toggle"><input type="checkbox" id="live-toggle"> Live stream (≈1 record/s)</label>
+        </div>
+        <dl class="readout" id="readout"></dl>
+      </section>
+
+      <section class="panel" aria-labelledby="groups-title">
+        <div class="panel-head">
+          <h2 id="groups-title">Consumer groups</h2>
+          <span class="sub">round-robin assignment</span>
+        </div>
+        <div id="groups"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="broker-title">
+        <h2 id="broker-title">Broker</h2>
+        <p class="sub">Retention deletes the oldest closed segment in each partition. The active segment, the one still being written, is never deleted. Real Kafka deletes by age (<code>retention.ms</code>) or size (<code>retention.bytes</code>).</p>
+        <div class="row">
+          <button class="btn" id="retention-btn" type="button">Apply retention</button>
+          <button class="btn" id="reset-demo-btn" type="button">Restart example</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>Uses the same partitioner as <code>kafka_with_pyspark_demo.ipynb</code>, crc32 of the key mod 3, so <code>TERM-0</code> lands in partition 1 here and in the notebook. Real Kafka uses murmur2. Not simulated: replication, leader election, and the group coordinator.</footer>
+</div>
+
+<script>
+(() => {
+  const NUM_P = 3, SEG = 5, PITCH = 30, GAP = 14, PAD = 6;
+  const KEYS = ["TERM-0", "TERM-1", "TERM-2", "TERM-3", "TERM-4", "TERM-5"];
+  const LETTERS = "abcdefghij";
+  const CARET = '<svg viewBox="0 0 10 9" aria-hidden="true"><polygon points="5,0 10,9 0,9" fill="currentColor"/></svg>';
+
+  const CRC_TABLE = (() => {
+    const t = new Uint32Array(256);
+    for (let n = 0; n < 256; n++) {
+      let c = n;
+      for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+      t[n] = c >>> 0;
+    }
+    return t;
+  })();
+  function crc32(str) {
+    let c = 0xFFFFFFFF;
+    for (const b of new TextEncoder().encode(str)) c = CRC_TABLE[(c ^ b) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+  const partitionFor = key => crc32(key) % NUM_P;
+  const keyClass = key => "k" + KEYS.indexOf(key);
+
+  let S;
+  function freshState() {
+    return {
+      logs: [[], [], []], logStart: [0, 0, 0], events: [], highlight: null,
+      lastProduced: null, flashes: [], readout: null,
+      groups: [
+        { id: "fraud-detector", cls: "g1", prefix: "worker-", members: [], next: 0, committed: [0, 0, 0], errors: [], auto: false },
+        { id: "analytics", cls: "g2", prefix: "reporter-", members: [], next: 0, committed: [0, 0, 0], errors: [], auto: false },
+      ],
+    };
+  }
+
+  const end = p => S.logs[p].length;
+  const offsetsJson = arr => "{" + arr.map((o, p) => `"${p}": ${o}`).join(", ") + "}";
+  function logEvent(kind, text) {
+    S.events.unshift({ kind, text });
+    S.events.length = Math.min(S.events.length, 40);
+  }
+
+  // ---- broker operations ----
+  function produce(key, quiet) {
+    const p = partitionFor(key), offset = end(p);
+    S.logs[p].push({ offset, key });
+    S.lastProduced = { p, offset };
+    S.readout = { key, crc: crc32(key), p, offset };
+    if (!quiet) logEvent("produce", `${key} → crc32 % 3 = ${p} → partition ${p}, offset ${offset}`);
+    return p;
+  }
+
+  function assignment(g) {
+    const a = {};
+    g.members.forEach(m => a[m] = []);
+    if (g.members.length) for (let p = 0; p < NUM_P; p++) a[g.members[p % g.members.length]].push(p);
+    return a;
+  }
+  function ownerOf(g, p) { return g.members.length ? g.members[p % g.members.length] : null; }
+  function describeAssignment(g) {
+    const a = assignment(g);
+    return g.members.map(m => `${m} [${a[m].join(", ")}]`).join(", ");
+  }
+
+  function addMember(g, quiet) {
+    if (g.members.length >= 5) return;
+    g.members.push(g.prefix + LETTERS[g.next++ % LETTERS.length]);
+    if (!quiet) logEvent("rebalance", `${g.id}: ${g.members[g.members.length - 1]} joined → ${describeAssignment(g)}`);
+  }
+  function removeMember(g, m) {
+    g.members = g.members.filter(x => x !== m);
+    logEvent("rebalance", `${g.id}: ${m} left → ${g.members.length ? describeAssignment(g) : "no consumers, nothing is being read"}`);
+  }
+
+  function poll(g, auto) {
+    if (!g.members.length) {
+      if (!auto) logEvent("error", `${g.id}: no consumers running, nothing polled`);
+      return;
+    }
+    const a = assignment(g), perMember = [], errors = [];
+    let total = 0;
+    for (const m of g.members) {
+      let n = 0;
+      for (const p of a[m]) {
+        if (g.committed[p] < S.logStart[p]) { errors.push(p); continue; }
+        const from = g.committed[p], to = end(p);
+        if (to > from) {
+          S.flashes.push({ p, from, to, cls: g.cls });
+          n += to - from;
+          g.committed[p] = to;
+        }
+      }
+      total += n;
+      if (a[m].length) perMember.push(`${m} ${n}`);
+    }
+    const newErrors = errors.filter(p => !g.errors.includes(p));
+    g.errors = errors;
+    for (const p of newErrors)
+      logEvent("error", `${g.id}: OffsetOutOfRange on partition ${p}, wants offset ${g.committed[p]} but the log now starts at ${S.logStart[p]}`);
+    if (total || !auto)
+      logEvent("poll", `${g.id} read ${total} record${total === 1 ? "" : "s"} (${perMember.join(", ")}), committed ${offsetsJson(g.committed)}`);
+  }
+
+  function resetGroup(g, to) {
+    g.committed = to === "earliest" ? S.logStart.slice() : S.logs.map(l => l.length);
+    g.errors = [];
+    logEvent("reset", `${g.id} reset to ${to}: committed ${offsetsJson(g.committed)}, lag ${totalLag(g)}`);
+  }
+
+  function applyRetention() {
+    const deleted = [];
+    for (let p = 0; p < NUM_P; p++) {
+      if (!end(p)) continue;
+      const activeSeg = Math.floor((end(p) - 1) / SEG), firstSeg = S.logStart[p] / SEG;
+      if (firstSeg < activeSeg) {
+        deleted.push(`partition ${p} offsets ${S.logStart[p]}–${S.logStart[p] + SEG - 1}`);
+        S.logStart[p] += SEG;
+      }
+    }
+    logEvent("retention", deleted.length
+      ? `deleted ${deleted.join("; ")}. Log start offsets now ${offsetsJson(S.logStart)}`
+      : "nothing deleted: each partition is down to its active segment");
+  }
+
+  const lagOf = (g, p) => end(p) - g.committed[p];
+  const totalLag = g => [0, 1, 2].reduce((s, p) => s + lagOf(g, p), 0);
+
+  // ---- example state ----
+  function seed() {
+    S = freshState();
+    const [fraud, analytics] = S.groups;
+    addMember(fraud, true); addMember(fraud, true); addMember(analytics, true);
+    let x = 7;
+    const nextKey = () => { x = (x * 1103515245 + 12345) % 2147483648; return KEYS[x % KEYS.length]; };
+    for (let i = 0; i < 21; i++) produce(nextKey(), true);
+    poll(fraud, true);
+    S.events = [];
+    for (let i = 0; i < 6; i++) produce(nextKey(), true);
+    S.lastProduced = null;
+    S.flashes = [];
+    logEvent("info", `example loaded: 27 records produced; fraud-detector (2 consumers) is ${totalLag(fraud)} behind, analytics (1 consumer) hasn't read anything yet`);
+  }
+
+  // ---- rendering ----
+  const xCell = o => PAD + o * PITCH + Math.floor(o / SEG) * GAP;
+  const xBoundary = o => Math.max(PAD - 2, xCell(o) - (o > 0 && o % SEG === 0 ? GAP / 2 + 2 : 2));
+
+  const lanesEl = document.getElementById("lanes");
+  const laneEls = [];
+  for (let p = 0; p < NUM_P; p++) {
+    const lane = document.createElement("div");
+    lane.className = "lane";
+    lane.innerHTML = `<div class="lane-head"></div><div class="track-scroll"><div class="track"></div></div>`;
+    lanesEl.appendChild(lane);
+    laneEls.push({ head: lane.children[0], scroll: lane.children[1], track: lane.querySelector(".track") });
+  }
+
+  function renderTopic() {
+    for (let p = 0; p < NUM_P; p++) {
+      const { head, scroll, track } = laneEls[p];
+      const e = end(p), start = S.logStart[p];
+      const owners = S.groups.map(g => {
+        const o = ownerOf(g, p);
+        return o ? `<span class="own ${g.cls}"><i></i>${g.id}: ${o}</span>` : `<span class="own none">${g.id}: unassigned</span>`;
+      }).join("");
+      head.innerHTML = `<span class="pname">Partition ${p}</span><span class="pmeta">log start ${start} · next offset ${e}</span><span class="owners">${owners}</span>`;
+
+      let html = "";
+      const segCount = Math.floor(e / SEG) + 1;
+      for (let s = 0; s < segCount; s++) {
+        const base = s * SEG, w = SEG * PITCH - 4;
+        if (base >= e) break;
+        html += `<span class="seg${base + SEG <= start ? " gone" : ""}" style="left:${xCell(base)}px;width:${w}px">${String(base).padStart(5, "0")}.log</span>`;
+      }
+      const flashFor = o => S.flashes.find(f => f.p === p && o >= f.from && o < f.to);
+      for (const r of S.logs[p]) {
+        const cls = ["cell"];
+        if (r.offset < start) cls.push("gone"); else cls.push(keyClass(r.key));
+        if (S.highlight && r.key !== S.highlight) cls.push("dim");
+        if (S.lastProduced && S.lastProduced.p === p && S.lastProduced.offset === r.offset) cls.push("new");
+        const f = flashFor(r.offset);
+        if (f) cls.push("flash-" + f.cls);
+        const title = r.offset < start ? `offset ${r.offset}, deleted by retention` : `offset ${r.offset}, key ${r.key}`;
+        html += `<span class="${cls.join(" ")}" style="left:${xCell(r.offset)}px" title="${title}">${r.offset}</span>`;
+      }
+      html += `<span class="cell slot" style="left:${xCell(e)}px" title="next offset ${e}">${e}</span>`;
+      for (const g of S.groups) {
+        const c = g.committed[p], bad = c < start;
+        const label = bad ? `${g.id} @ ${c} · deleted` : `${g.id} @ ${c} · lag ${lagOf(g, p)}`;
+        html += `<span class="marker ${g.cls}${bad ? " bad" : ""}" style="left:${xBoundary(c)}px">${CARET}${label}</span>`;
+      }
+      track.style.width = (xCell(e) + 260) + "px";
+      track.innerHTML = html;
+      if (S.lastProduced && S.lastProduced.p === p) scroll.scrollLeft = scroll.scrollWidth;
+    }
+    S.lastProduced = null;
+    S.flashes = [];
+  }
+
+  const groupsEl = document.getElementById("groups");
+  let groupsHtml = "";
+  function renderGroups() {
+    const html = S.groups.map((g, gi) => {
+      const a = assignment(g);
+      const members = g.members.length
+        ? g.members.map(m => `<div class="member"><span class="who">${m}</span><span class="asg${a[m].length ? "" : " idle"}">${a[m].length ? "partitions " + a[m].join(", ") : "idle, no partition left"}</span><button class="chip" type="button" data-act="remove" data-g="${gi}" data-m="${m}" aria-label="Remove ${m}">×</button></div>`).join("")
+        : `<p class="empty">No consumers. Nothing reads this group's partitions.</p>`;
+      const err = g.errors.length
+        ? `<p class="err">OffsetOutOfRange on partition ${g.errors.join(", ")}: the committed offset was deleted by retention. Reset to earliest or latest to continue.</p>` : "";
+      return `<div class="group ${g.cls}">
+        <div class="group-name"><h3>${g.id}</h3><label class="toggle"><input type="checkbox" id="auto-${gi}" data-g="${gi}"${g.auto ? " checked" : ""}> Auto-poll</label></div>
+        <div class="lag"><span class="lag-num" data-lag="${gi}"></span><span class="lag-lbl">records behind</span><span class="lag-parts" data-lagp="${gi}"></span></div>
+        <div class="members">${members}</div>
+        ${err}
+        <div class="row">
+          <button class="btn primary" type="button" data-act="poll" data-g="${gi}"${g.members.length ? "" : " disabled"}>Poll</button>
+          <button class="btn" type="button" data-act="add" data-g="${gi}"${g.members.length >= 5 ? " disabled" : ""}>Add consumer</button>
+        </div>
+        <div class="row">
+          <button class="btn" type="button" data-act="earliest" data-g="${gi}">Reset to earliest</button>
+          <button class="btn" type="button" data-act="latest" data-g="${gi}">Reset to latest</button>
+        </div>
+      </div>`;
+    }).join("");
+    if (html !== groupsHtml) { groupsEl.innerHTML = html; groupsHtml = html; }
+    S.groups.forEach((g, gi) => {
+      groupsEl.querySelector(`[data-lag="${gi}"]`).textContent = totalLag(g);
+      groupsEl.querySelector(`[data-lagp="${gi}"]`).textContent = [0, 1, 2].map(p => `P${p} ${lagOf(g, p)}`).join(" · ");
+    });
+  }
+
+  const readoutEl = document.getElementById("readout");
+  function renderReadout() {
+    const r = S.readout;
+    readoutEl.innerHTML = r
+      ? `<dt>key</dt><dd>${r.key}</dd><dt>crc32</dt><dd>${r.crc}</dd><dt>% 3</dt><dd>${r.p}</dd><dt>result</dt><dd>partition ${r.p}, offset ${r.offset}</dd>`
+      : `<dt>key</dt><dd>none yet</dd>`;
+  }
+
+  const logEl = document.getElementById("log");
+  function renderLog() {
+    logEl.innerHTML = S.events.map(e => `<li><span class="kind ${e.kind}">${e.kind}</span><span class="txt">${e.text}</span></li>`).join("");
+  }
+
+  const legendEl = document.getElementById("legend");
+  const keyBtnsEl = document.getElementById("keybtns");
+  KEYS.forEach((k, i) => {
+    legendEl.insertAdjacentHTML("beforeend", `<button class="keychip k${i}" type="button" data-key="${k}" aria-pressed="false">${k}</button>`);
+    keyBtnsEl.insertAdjacentHTML("beforeend", `<button class="btn keybtn k${i}" type="button" data-key="${k}">${k}</button>`);
+  });
+
+  function render() { renderTopic(); renderGroups(); renderReadout(); renderLog(); }
+
+  // ---- events ----
+  keyBtnsEl.addEventListener("click", e => {
+    const b = e.target.closest("[data-key]"); if (!b) return;
+    produce(b.dataset.key); render();
+  });
+  document.getElementById("random-btn").addEventListener("click", () => {
+    produce(KEYS[Math.floor(Math.random() * KEYS.length)]); render();
+  });
+  legendEl.addEventListener("click", e => {
+    const b = e.target.closest("[data-key]"); if (!b) return;
+    S.highlight = S.highlight === b.dataset.key ? null : b.dataset.key;
+    legendEl.querySelectorAll("[data-key]").forEach(x => x.setAttribute("aria-pressed", String(x.dataset.key === S.highlight)));
+    renderTopic();
+  });
+  groupsEl.addEventListener("click", e => {
+    const b = e.target.closest("[data-act]"); if (!b) return;
+    const g = S.groups[+b.dataset.g];
+    if (b.dataset.act === "poll") poll(g);
+    else if (b.dataset.act === "add") addMember(g);
+    else if (b.dataset.act === "remove") removeMember(g, b.dataset.m);
+    else resetGroup(g, b.dataset.act);
+    render();
+  });
+  groupsEl.addEventListener("change", e => {
+    if (!e.target.matches("input[type=checkbox]")) return;
+    const g = S.groups[+e.target.dataset.g];
+    g.auto = e.target.checked;
+    logEvent("info", `${g.id}: auto-poll ${g.auto ? "on, polling every 2 seconds" : "off"}`);
+    render();
+  });
+  document.getElementById("retention-btn").addEventListener("click", () => { applyRetention(); render(); });
+
+  const liveToggle = document.getElementById("live-toggle");
+  liveToggle.addEventListener("change", () => {
+    logEvent("info", liveToggle.checked ? "live stream on: a random key every second" : "live stream off");
+    render();
+  });
+  document.getElementById("reset-demo-btn").addEventListener("click", () => {
+    liveToggle.checked = false;
+    const hl = legendEl.querySelectorAll("[data-key]");
+    hl.forEach(x => x.setAttribute("aria-pressed", "false"));
+    seed(); render();
+  });
+
+  setInterval(() => {
+    if (!liveToggle.checked) return;
+    produce(KEYS[Math.floor(Math.random() * KEYS.length)]);
+    render();
+  }, 1000);
+  setInterval(() => {
+    const autos = S.groups.filter(g => g.auto);
+    if (!autos.length) return;
+    autos.forEach(g => poll(g, true));
+    render();
+  }, 2000);
+
+  seed();
+  render();
+})();
+</script>
+</body>
+</html>
