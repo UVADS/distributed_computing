@@ -6,4 +6,4 @@
 
 ## Interactive
 
-[MiniKafka Playground](content_kafka/minikafka_playground.html): produce keyed records, run consumer groups, and watch offsets, lag, replay, and retention. Download the file and open it in a web browser.
+[MiniKafka Playground](content_kafka/minikafka_playground.html): produce keyed records, run consumer groups, and watch offsets, lag, replay, and retention. Open the [hosted version](https://claude.ai/artifact/FFW8CNSE1gWkfHYKcqBnUY) (UVA Claude sign-in required), or download the file and open it in a web browser.
