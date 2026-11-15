@@ -10,5 +10,6 @@
 ### Content
 
 - Spark Streaming Notebook
-- Spark Streaming Demo
-- Delta lakes (time permitting)
+- Demo: Spark Streaming
+- Demo: Stateful Streaming with `transformWithState`
+
