@@ -11,5 +11,5 @@
 
 - Spark Streaming Notebook
 - Demo: Spark Streaming
-- Demo: Stateful Streaming with `transformWithState`
+- Demo: Stateful Streaming with `transformWithState` (instructor to share during class)
 
