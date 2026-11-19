@@ -15,13 +15,14 @@ Link is found in Reading List
 
 ### Deliverables
 
-#### Due by Friday, Nov 20th at 11:59pm ET:
-- Module 10 Quiz: Spark Streaming and Streaming Systems
-- Lab 8: Streaming Messages with Apache Kafka
 
 #### Due by Tuesday, Nov 24th at 11:59pm ET:
 - Module 11 Quiz: Delta Lakes
 
+#### Due by Wednesday Dec 9th at 11:59pm ET:
+- Final Project: Documented Code
+- Final Project: Paper
+  
 ---
 
 ### Content 
